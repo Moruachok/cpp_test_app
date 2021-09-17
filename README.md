@@ -14,5 +14,6 @@ g++ ./main.cpp
 
 
 3. Screenshot with changed output "Hi there"
-
+```
 ![screenshot](https://github.com/Moruachok/cpp_test_app/blob/main/hi.PNG)
+```

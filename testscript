@@ -1,0 +1,53 @@
+#!/bin/bash
+
+mkdir ~/docker/
+
+wait -n
+echo directory created------------------------------------------------------------
+
+
+git clone https://github.com/Moruachok/cpp_test_app.git /home/moruachok/docker/
+
+wait -n
+echo repository cloned------------------------------------------------------------
+
+
+cat > ~/docker/Dockerfile << EOF
+FROM gcc:latest
+
+COPY . /usr/src/cpp_test
+
+WORKDIR /usr/src/cpp_test
+
+RUN g++ main.cpp
+
+CMD [ "./a.out" ]
+EOF
+
+wait -n
+echo Dockerfile created----------------------------------------------------------
+
+
+docker build ~/docker/ -t cpp_test:1
+
+wait -n
+echo docker builded--------------------------------------------------------------
+
+
+docker run --rm -it cpp_test:1
+
+wait -n
+echo docker runed----------------------------------------------------------------
+
+
+docker tag cpp_test:1 moruachok/cpp_test
+
+wait -n
+echo docker taged----------------------------------------------------------------
+
+
+docker push moruachok/cpp_test
+
+wait -n
+echo docker pushed---------------------------------------------------------------
+echo all done, check it.---------------------------------------------------------

@@ -10,8 +10,8 @@ g++ ./main.cpp
 2. execute in shell
 ``` shell
 ./a.out
+```
 
 
 3. Screenshot with changed output "Hi there"
 ![screenshot](https://github.com/Moruachok/cpp_test_app/hi.PNG?raw=true)
-``
